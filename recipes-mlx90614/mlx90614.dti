@@ -1,0 +1,16 @@
+/dts-v1/;
+/plugin/;
+/ {
+    compatible = "brcm,bcm2835";
+    fragment@0 {
+        target = <&i2c1>;
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <0>;
+            mlx90614-i2c@5a {
+            compatible = "mlx90614";
+            reg = <0x5a>;
+            };
+        };
+    };
+};
